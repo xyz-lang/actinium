@@ -8,7 +8,7 @@ import org.bukkit.event.player.PlayerJoinEvent
 object ChatListener : Listener {
 
     @EventHandler
-    fun chatCooldown(e: AsyncPlayerChatEvent){
-        
+    fun chat(e: AsyncPlayerChatEvent) {
+
     }
 }

@@ -1,15 +1,34 @@
 package me.notzorba.actinium.commands
 
 import co.aikar.commands.BaseCommand
-import co.aikar.commands.annotation.CommandAlias
-import co.aikar.commands.annotation.CommandPermission
+import co.aikar.commands.annotation.*
+import me.notzorba.actinium.Actinium
+import me.notzorba.actinium.util.SpawnUtil
+import net.kyori.adventure.text.Component
+import net.kyori.adventure.text.format.NamedTextColor
+import net.kyori.adventure.text.format.TextColor
+import org.bukkit.Location
 import org.bukkit.entity.Player
 
 object Spawn : BaseCommand() {
 
     @CommandAlias("setspawn")
-    @CommandPermission("command.setspawn")
-    fun setspawn(sender: Player){
+    @CommandPermission("actinium.setspawn")
+    fun setSpawn(sender: Player) {
+        SpawnUtil.setSpawnLocation(sender.location)
+        sender.sendMessage(Component.text("Set spawn to your current location.", NamedTextColor.GREEN))
+    }
 
+    @CommandAlias("spawn")
+    fun spawn(sender: Player, @Optional @Name("target") @Flags("other") target: Player) {
+
+        val player = target ?: sender
+
+        if(player != sender && !sender.hasPermission("actinium.spawn.others")) {
+            sender.sendMessage(Component.text("You do not have permission!", NamedTextColor.RED))
+            return
+        }
+        player.teleport(SpawnUtil.getSpawnLocation())
+        player.sendMessage(Component.text("Teleported you to spawn.", NamedTextColor.GREEN))
     }
 }

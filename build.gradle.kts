@@ -6,7 +6,7 @@ plugins {
     id("maven-publish")
 }
 
-group = "org.hyrical"
+group = "me.notzorba"
 version = "1.0-SNAPSHOT"
 
 repositories {

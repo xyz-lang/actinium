@@ -1,0 +1,14 @@
+spawn:
+  world: 'world'
+  x: 0.0
+  y: 0.0
+  z: 0.0
+  pitch: 90.0
+  yaw: 0.0
+
+autobroadcast:
+  delay: 60 #Delay between autobroadcasts in seconds
+  prefix: '&6&lTIP &r&7➥ '
+  announcements:
+    - '1' #Add %nl% for a new line
+    - '2'
