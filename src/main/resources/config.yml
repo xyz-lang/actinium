@@ -15,7 +15,7 @@ autobroadcast:
 
 discord:
   message: '&9&lDISCORD &8&l- &fJoin our discord by clicking here'
-  link: 'discord.gg/example'
+  link: 'https://discord.gg/example'
 
 messages:
   firstjoin: '&7&o%player% has joined for the first time!'
