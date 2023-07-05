@@ -2,15 +2,12 @@ package me.notzorba.actinium.commands
 
 import co.aikar.commands.BaseCommand
 import co.aikar.commands.annotation.*
-import me.notzorba.actinium.Actinium
 import me.notzorba.actinium.util.SpawnUtil
 import net.kyori.adventure.text.Component
 import net.kyori.adventure.text.format.NamedTextColor
-import net.kyori.adventure.text.format.TextColor
-import org.bukkit.Location
 import org.bukkit.entity.Player
 
-object Spawn : BaseCommand() {
+object SpawnCommands : BaseCommand() {
 
     @CommandAlias("setspawn")
     @CommandPermission("actinium.setspawn")

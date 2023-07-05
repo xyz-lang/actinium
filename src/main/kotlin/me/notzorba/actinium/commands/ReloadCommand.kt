@@ -11,7 +11,7 @@ import org.bukkit.entity.Player
 
 @CommandAlias("actinium")
 @CommandPermission("actinium.reload")
-object Reload : BaseCommand() {
+object ReloadCommand : BaseCommand() {
 
     @Subcommand("reload")
     fun reload(sender: Player) {

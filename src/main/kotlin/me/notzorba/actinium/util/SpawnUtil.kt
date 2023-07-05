@@ -21,7 +21,7 @@ object SpawnUtil {
 
     fun setSpawnLocation(location: Location){
         val config = Actinium.instance.config
-        val world = location.world
+        val world = location.world.name
         val x = location.x
         val y = location.y
         val z = location.z
@@ -35,5 +35,6 @@ object SpawnUtil {
             set("spawn.pitch", pitch)
             set("spawn.yaw", yaw)
         }
+        Actinium.instance.saveConfig()
     }
 }

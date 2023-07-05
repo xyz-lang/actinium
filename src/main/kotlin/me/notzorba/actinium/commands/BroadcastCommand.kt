@@ -8,9 +8,9 @@ import me.notzorba.actinium.util.Chat
 import org.bukkit.Bukkit
 import org.bukkit.entity.Player
 
-object Broadcast : BaseCommand() {
+object BroadcastCommand : BaseCommand() {
 
-    @CommandAlias("broadcast")
+    @CommandAlias("broadcast|bc|announce|alert")
     @CommandPermission("command.announce")
     fun broadcast(sender: Player, @Name("message") message: String) {
         Bukkit.broadcastMessage("")

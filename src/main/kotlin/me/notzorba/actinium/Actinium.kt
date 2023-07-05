@@ -19,11 +19,14 @@ class Actinium : JavaPlugin() {
 
         val commandManager = PaperCommandManager(this)
 
-        commandManager.registerCommand(Gamemode)
-        commandManager.registerCommand(Broadcast)
-        commandManager.registerCommand(Spawn)
-        commandManager.registerCommand(Teleport)
-        commandManager.registerCommand(Reload)
+        commandManager.registerCommand(GamemodeCommands)
+        commandManager.registerCommand(BroadcastCommand)
+        commandManager.registerCommand(SpawnCommands)
+        commandManager.registerCommand(TeleportCommands)
+        commandManager.registerCommand(ReloadCommand)
+        commandManager.registerCommand(DiscordCommand)
+        commandManager.registerCommand(HealCommands)
+        commandManager.registerCommand(ReportCommand)
         Bukkit.getPluginManager().registerEvents(ConnectionListener, this)
         AutoBroadcastTask.load(config)
     }

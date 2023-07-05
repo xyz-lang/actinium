@@ -12,7 +12,7 @@ import net.kyori.adventure.text.format.NamedTextColor
 import org.bukkit.Bukkit
 import org.bukkit.entity.Player
 
-object Teleport : BaseCommand() {
+object TeleportCommands : BaseCommand() {
 
     @CommandAlias("tp|teleport")
     @CommandPermission("actinium.teleport")

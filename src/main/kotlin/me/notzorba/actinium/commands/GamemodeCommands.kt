@@ -7,7 +7,7 @@ import net.kyori.adventure.text.format.NamedTextColor
 import org.bukkit.GameMode
 import org.bukkit.entity.Player
 
-object Gamemode : BaseCommand() {
+object GamemodeCommands : BaseCommand() {
 
     @CommandAlias("gmc")
     @CommandPermission("actinium.gamemode.creative")
