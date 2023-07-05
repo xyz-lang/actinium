@@ -27,6 +27,7 @@ class Actinium : JavaPlugin() {
         commandManager.registerCommand(DiscordCommand)
         commandManager.registerCommand(HealCommands)
         commandManager.registerCommand(ReportCommand)
+        commandManager.registerCommand(FreezeCommand)
         Bukkit.getPluginManager().registerEvents(ConnectionListener, this)
         AutoBroadcastTask.load(config)
     }
