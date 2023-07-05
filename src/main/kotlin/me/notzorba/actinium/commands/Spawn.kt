@@ -20,14 +20,14 @@ object Spawn : BaseCommand() {
     }
 
     @CommandAlias("spawn")
-    fun spawn(sender: Player, @Optional @Name("target") @Flags("other") target: Player) {
-
+    fun spawn(sender: Player, @Optional @Name("target") @Flags("other") target: Player?) {
         val player = target ?: sender
 
-        if(player != sender && !sender.hasPermission("actinium.spawn.others")) {
+        if (player != sender && !sender.hasPermission("actinium.spawn.others")) {
             sender.sendMessage(Component.text("You do not have permission!", NamedTextColor.RED))
             return
         }
+
         player.teleport(SpawnUtil.getSpawnLocation())
         player.sendMessage(Component.text("Teleported you to spawn.", NamedTextColor.GREEN))
     }

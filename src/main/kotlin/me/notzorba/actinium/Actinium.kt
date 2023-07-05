@@ -1,10 +1,7 @@
 package me.notzorba.actinium
 
 import co.aikar.commands.PaperCommandManager
-import me.notzorba.actinium.commands.Broadcast
-import me.notzorba.actinium.commands.Gamemode
-import me.notzorba.actinium.commands.Spawn
-import me.notzorba.actinium.commands.Teleport
+import me.notzorba.actinium.commands.*
 import me.notzorba.actinium.listeners.ConnectionListener
 import me.notzorba.actinium.tasks.AutoBroadcastTask
 import org.bukkit.Bukkit
@@ -26,6 +23,7 @@ class Actinium : JavaPlugin() {
         commandManager.registerCommand(Broadcast)
         commandManager.registerCommand(Spawn)
         commandManager.registerCommand(Teleport)
+        commandManager.registerCommand(Reload)
         Bukkit.getPluginManager().registerEvents(ConnectionListener, this)
         AutoBroadcastTask.load(config)
     }

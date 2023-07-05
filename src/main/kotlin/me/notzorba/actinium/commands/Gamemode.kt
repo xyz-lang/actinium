@@ -15,11 +15,11 @@ object Gamemode : BaseCommand() {
 
         val player = target ?: sender
 
-        if(player != sender && !sender.hasPermission("actinium.gamemode.others")) {
+        if (player != sender && !sender.hasPermission("actinium.gamemode.others")) {
             sender.sendMessage(Component.text("You do not have permission!", NamedTextColor.RED))
             return
         }
-        if(target != null) {
+        if (target != null) {
             sender.sendMessage(Component.text("Set ${target.name}'s gamemode to creative", NamedTextColor.GREEN))
         }
 
@@ -33,11 +33,11 @@ object Gamemode : BaseCommand() {
 
         val player = target ?: sender
 
-        if(player != sender && !sender.hasPermission("actinium.gamemode.others")) {
+        if (player != sender && !sender.hasPermission("actinium.gamemode.others")) {
             sender.sendMessage(Component.text("You do not have permission!", NamedTextColor.RED))
             return
         }
-        if(target != null) {
+        if (target != null) {
             sender.sendMessage(Component.text("Set ${target.name}'s gamemode to creative", NamedTextColor.GREEN))
         }
 
@@ -51,11 +51,11 @@ object Gamemode : BaseCommand() {
 
         val player = target ?: sender
 
-        if(player != sender && !sender.hasPermission("actinium.gamemode.others")) {
+        if (player != sender && !sender.hasPermission("actinium.gamemode.others")) {
             sender.sendMessage(Component.text("You do not have permission!", NamedTextColor.RED))
             return
         }
-        if(target != null) {
+        if (target != null) {
             sender.sendMessage(Component.text("Set ${target.name}'s gamemode to creative", NamedTextColor.GREEN))
         }
 
@@ -69,16 +69,15 @@ object Gamemode : BaseCommand() {
 
         val player = target ?: sender
 
-        if(player != sender && !sender.hasPermission("actinium.gamemode.others")) {
+        if (player != sender && !sender.hasPermission("actinium.gamemode.others")) {
             sender.sendMessage(Component.text("You do not have permission!", NamedTextColor.RED))
             return
         }
-        if(target != null) {
+        if (target != null) {
             sender.sendMessage(Component.text("Set ${target.name}'s gamemode to creative", NamedTextColor.GREEN))
         }
 
         player.gameMode = GameMode.ADVENTURE
         player.sendMessage(Component.text("Your gamemode has been set to adventure", NamedTextColor.GREEN))
     }
-
 }

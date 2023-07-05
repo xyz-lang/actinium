@@ -6,8 +6,10 @@ import co.aikar.commands.annotation.CommandPermission
 import co.aikar.commands.annotation.Flags
 import co.aikar.commands.annotation.Name
 import co.aikar.commands.annotation.Optional
+import me.notzorba.actinium.util.Chat
 import net.kyori.adventure.text.Component
 import net.kyori.adventure.text.format.NamedTextColor
+import org.bukkit.Bukkit
 import org.bukkit.entity.Player
 
 object Teleport : BaseCommand() {
@@ -16,10 +18,10 @@ object Teleport : BaseCommand() {
     @CommandPermission("actinium.teleport")
     fun teleport(sender: Player, @Name("target") @Flags("other") target: Player, @Optional @Flags("other") @Name("targett") targett: Player?) {
 
-        if(targett != null && !sender.hasPermission("actinium.teleport.others")) {
+        if (targett != null && !sender.hasPermission("actinium.teleport.others")) {
             sender.sendMessage(Component.text("You do not have permission!", NamedTextColor.RED))
             return
-        } else if(targett != null) {
+        } else if (targett != null) {
             target.teleport(targett.getLocation())
             sender.sendMessage(Component.text("Teleported ${target.name} to ${targett.name}", NamedTextColor.GREEN))
             return
@@ -35,5 +37,13 @@ object Teleport : BaseCommand() {
 
         target.teleport(sender.getLocation())
         sender.sendMessage(Component.text("Teleported ${target.name} to you", NamedTextColor.GREEN))
+    }
+
+    @CommandAlias("tpall")
+    @CommandPermission("actinium.tpall")
+    fun teleportAll(sender: Player) {
+
+        Bukkit.getOnlinePlayers().forEach {  it.teleport(sender.getLocation()) }
+        sender.sendMessage(Chat.format("&aTeleproted all online players to you!"))
     }
 }
