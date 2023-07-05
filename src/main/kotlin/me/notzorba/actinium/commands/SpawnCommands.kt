@@ -2,6 +2,7 @@ package me.notzorba.actinium.commands
 
 import co.aikar.commands.BaseCommand
 import co.aikar.commands.annotation.*
+import me.notzorba.actinium.util.Chat
 import me.notzorba.actinium.util.SpawnUtil
 import net.kyori.adventure.text.Component
 import net.kyori.adventure.text.format.NamedTextColor
@@ -23,6 +24,10 @@ object SpawnCommands : BaseCommand() {
         if (player != sender && !sender.hasPermission("actinium.spawn.others")) {
             sender.sendMessage(Component.text("You do not have permission!", NamedTextColor.RED))
             return
+        }
+
+        if (target != null) {
+            sender.sendMessage(Chat.format("&aTeleported {${target.name} to spawn!"))
         }
 
         player.teleport(SpawnUtil.getSpawnLocation())

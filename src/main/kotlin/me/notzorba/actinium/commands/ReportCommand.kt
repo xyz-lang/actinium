@@ -17,7 +17,7 @@ import org.bukkit.entity.Player
 object ReportCommand : BaseCommand() {
 
     @CommandAlias("report")
-    fun report(sender: Player, @Name("target") @Flags("other") target: Player, @Name("reason") reason: String) {
+    fun report(sender: Player, @Name("target") target: Player, @Name("reason") reason: String) {
 
         if (ReportHandler.isOnReportCooldown(sender)) {
             sender.sendMessage(Chat.format("&cYou are on report cooldown."))

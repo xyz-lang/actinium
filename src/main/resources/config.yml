@@ -10,7 +10,7 @@ spawn:
 autobroadcast:
   delay: 60 #Delay between autobroadcasts in seconds
   announcements:
-    - '%nl%&6&lTIP &r&7➥ &eThis is an example of multi line broadcast%nl%' #Add %nl% for a new line
+    - '%nl%&6&lTIP &r&7➥ &eThis is an example %nl%of multi %nl%line broadcast%nl%' #Add %nl% for a new line
     - '%nl%&6&lActinium &r&7➥ &eThank you for downloading &6Actinium%nl%'
 
 discord:
