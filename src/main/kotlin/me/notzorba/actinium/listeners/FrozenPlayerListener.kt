@@ -1,5 +1,6 @@
 package me.notzorba.actinium.listeners
 
+import io.papermc.paper.event.block.BlockBreakBlockEvent
 import me.notzorba.actinium.handlers.FreezeHandler
 import me.notzorba.actinium.util.Chat
 import org.bukkit.Location
@@ -7,6 +8,8 @@ import org.bukkit.entity.Player
 import org.bukkit.event.EventHandler
 import org.bukkit.event.EventPriority
 import org.bukkit.event.Listener
+import org.bukkit.event.block.BlockBreakEvent
+import org.bukkit.event.block.BlockPlaceEvent
 import org.bukkit.event.entity.EntityDamageByEntityEvent
 import org.bukkit.event.player.PlayerMoveEvent
 
@@ -50,6 +53,22 @@ object FrozenPlayerListener : Listener {
                 entity.sendMessage(Chat.format("&cYou cannot damage others while frozen"))
                 e.isCancelled = true
             }
+        }
+    }
+
+    @EventHandler
+    fun blockBreak(e: BlockBreakEvent) {
+        if (FreezeHandler.isFrozen(e.player)) {
+            e.player.sendMessage(Chat.format("&cYou cannot break blocks while frozen"))
+            e.isCancelled = true
+        }
+    }
+
+    @EventHandler
+    fun blockPlace(e: BlockPlaceEvent) {
+        if (FreezeHandler.isFrozen(e.player)) {
+            e.player.sendMessage(Chat.format("&cYou cannot place blocks while frozen"))
+            e.isCancelled = true
         }
     }
 }

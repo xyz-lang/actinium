@@ -3,6 +3,7 @@ package me.notzorba.actinium
 import co.aikar.commands.PaperCommandManager
 import me.notzorba.actinium.commands.*
 import me.notzorba.actinium.listeners.ConnectionListener
+import me.notzorba.actinium.listeners.FrozenPlayerListener
 import me.notzorba.actinium.tasks.AutoBroadcastTask
 import org.bukkit.Bukkit
 import org.bukkit.plugin.java.JavaPlugin
@@ -28,6 +29,7 @@ class Actinium : JavaPlugin() {
         commandManager.registerCommand(HealCommands)
         commandManager.registerCommand(ReportCommand)
         commandManager.registerCommand(FreezeCommand)
+        Bukkit.getPluginManager().registerEvents(FrozenPlayerListener, this)
         Bukkit.getPluginManager().registerEvents(ConnectionListener, this)
         AutoBroadcastTask.load(config)
     }

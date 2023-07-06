@@ -5,6 +5,7 @@ spawn:
   z: 0.0
   pitch: 90.0
   yaw: 0.0
+  delay: 5 #In seconds
   teleport-to-spawn-on-join: false
 
 autobroadcast:

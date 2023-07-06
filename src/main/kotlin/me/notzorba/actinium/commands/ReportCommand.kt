@@ -19,8 +19,10 @@ object ReportCommand : BaseCommand() {
     @CommandAlias("report")
     fun report(sender: Player, @Name("target") target: Player, @Name("reason") @Flags("other") reason: String) {
 
+        var remaining = ReportHandler.getRemaining(sender)
+
         if (ReportHandler.isOnReportCooldown(sender)) {
-            sender.sendMessage(Chat.format("&cYou are on report cooldown."))
+            sender.sendMessage(Chat.format("&cYou are on report for $remaining seconds."))
             return
         }
 
